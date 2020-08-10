@@ -27,7 +27,7 @@ namespace Crypto
     int256_t q;
   } PrivateKey;
 
-  // struct ot hold public key members
+  // struct to hold public key members
   typedef struct
   {
     int256_t r;
@@ -144,7 +144,7 @@ namespace Crypto
     {
       if ((rsa.public_key == nullptr) || (rsa.private_key == nullptr))
       {
-        std::cout << "[ERROR] Can't print keys because of nullptr!\n";
+        std::cout << "[ERROR] Can't print keys because one or both are null-pointers!\n";
       }
       std::cout << "---- PUBLIC KEY ----\n";
       std::cout << "---- r = " << rsa.getPublicKey()->r << " ----\n";
