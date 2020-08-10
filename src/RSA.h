@@ -124,7 +124,7 @@ namespace Crypto
     //
     // str: string to decrypt
     //
-    // return: string; Encrypted message
+    // return: string; Decrypted message
     //
     string decrypt(CryptoString str);
 
@@ -134,7 +134,7 @@ namespace Crypto
     // ch: character to be encrypted
     //
     // return: CryptoChar; Boost's 256bit integer which contains
-    //         encrypted character
+    //         the encrypted character
     //
     CryptoChar encrypt(char ch);
 
@@ -142,7 +142,7 @@ namespace Crypto
     // Decrypts a string
     //
     // str: character to decrypt;  Boost's 256bit integer which contains
-    //      encrypted character
+    //      the decrypted character
     //
     // return: char; Encrypted character
     //

@@ -31,6 +31,71 @@ Containing algorithms are the *basic euclidean algorithm* to calculate the *grea
 Contains *unit tests*.
 
 ## Usage
+First of all an instance of RSA has to be created.  
+RSA has two main functions *encrypt()* and *decrypt()*. Each two times, one for en-/decrypt strings and one for en-/decrypt characters.  
+The method signatures are the following:  
+```
+//-----------------------------------------------------
+// Encrypts a string
+//
+// str: string to be encrypted
+//
+// return: CryptoString; Structure which contains
+//         encrypted message
+//
+CryptoString encrypt(string str);
+
+//-----------------------------------------------------
+// Decrypts a string
+//
+// str: string to decrypt
+//
+// return: string; Decrypted message
+//
+string decrypt(CryptoString str);
+
+//-----------------------------------------------------
+// Encrypts a string
+//
+// ch: character to be encrypted
+//
+// return: CryptoChar; Boost's 256bit integer which contains
+//         the encrypted character
+//
+CryptoChar encrypt(char ch);
+
+//-----------------------------------------------------
+// Decrypts a string
+//
+// str: character to decrypt;  Boost's 256bit integer which contains
+//      the decrypted character
+//
+// return: char; Encrypted character
+//
+char decrypt(CryptoChar str);
+```
+All together an example for an en-/decryption of a string:
+```
+try
+{
+  Crypto::RSA rsa(6907, 7687, 24);
+
+  // Message to encrypt
+  string in_str = "This is a bretty long message, with extra special caharacters and no deeber meaning!";
+
+  // Encrypt message
+  Crypto::CryptoString out_str = rsa.encrypt(in_str);
+  // Decrypt message
+  string res_str = rsa.decrypt(out_str);
+
+  // Print to console
+  std::cout << "input: " << in_str << " | output: " << res_str << "\n";
+}
+catch (std::exception &e)
+{
+  std::cout << e.what();
+}
+```
 
 ## License
 MIT License
