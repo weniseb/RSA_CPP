@@ -32,7 +32,7 @@ Contains *unit tests*.
 
 ## Usage
 
-# License
+## License
 MIT License
 
 Copyright (c) 2020 Sebastian Weninger
