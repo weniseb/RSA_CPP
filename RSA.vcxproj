@@ -202,29 +202,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ChinRemainder.cpp" />
-    <ClCompile Include="Decryptor.cpp" />
-    <ClCompile Include="Encryptor.cpp" />
-    <ClCompile Include="Euclidean.cpp" />
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='UnitTests|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="RSA.cpp" />
-    <ClCompile Include="Tests.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='UnitTests|x64'">false</ExcludedFromBuild>
+    <ClCompile Include="src\Decryptor.cpp" />
+    <ClCompile Include="src\Encryptor.cpp" />
+    <ClCompile Include="src\math\ChinRemainder.cpp" />
+    <ClCompile Include="src\math\Euclidean.cpp" />
+    <ClCompile Include="src\RSA.cpp" />
+    <ClCompile Include="src\tests\Tests.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChinRemainder.h" />
-    <ClInclude Include="Decryptor.h" />
-    <ClInclude Include="Encryptor.h" />
-    <ClInclude Include="Euclidean.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="RSA.h" />
+    <ResourceCompile Include="RSA.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="RSA.rc" />
+    <ClInclude Include="src\Decryptor.h" />
+    <ClInclude Include="src\Encryptor.h" />
+    <ClInclude Include="src\math\ChinRemainder.h" />
+    <ClInclude Include="src\math\Euclidean.h" />
+    <ClInclude Include="src\RSA.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

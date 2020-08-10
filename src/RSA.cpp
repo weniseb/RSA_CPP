@@ -1,5 +1,5 @@
 #include "RSA.h"
-#include "Euclidean.h"
+#include "math/Euclidean.h"
 #include <exception>
 #include <boost/multiprecision/cpp_int.hpp>
 using namespace boost::multiprecision;

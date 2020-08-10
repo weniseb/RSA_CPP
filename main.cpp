@@ -1,8 +1,8 @@
 #include <iostream>
 #include <exception>
-#include "RSA.h"
-#include "Decryptor.h"
-#include "Encryptor.h"
+#include "src/RSA.h"
+#include "src/Decryptor.h"
+#include "src/Encryptor.h"
 
 using std::string;
 
