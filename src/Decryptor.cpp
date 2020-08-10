@@ -27,8 +27,8 @@ string Decryptor::decryptString(CryptoString input)
   return cypher;
 }
 
-int Decryptor::decryptChar(int c) const
+char Decryptor::decryptChar(CryptoChar c) const
 {
-  int256_t res = powm((int256_t)c, private_key->s, private_key->q * private_key->p);
+  CryptoChar res = powm(c, private_key->s, private_key->q * private_key->p);
   return res.convert_to<int>();
 }

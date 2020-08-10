@@ -31,7 +31,7 @@ namespace Crypto
     // input: input string
     // return: Crypto string
     CryptoString encryptString(string& input);
-    int256_t encryptChar(int c) const;
+    CryptoChar encryptChar(char c) const;
   };
 }
 #endif

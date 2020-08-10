@@ -38,7 +38,7 @@ namespace Crypto
     //
     // c: input char
     // return: decrypted char, represented as integer
-    int decryptChar(int c) const;
+    char decryptChar(CryptoChar c) const;
   };
 }
 #endif

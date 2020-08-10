@@ -5,7 +5,6 @@
 #include <exception>
 #include <boost/multiprecision/cpp_int.hpp>
 
-
 using namespace boost::multiprecision;
 using namespace Crypto;
 
@@ -128,5 +127,19 @@ string RSA::decrypt(CryptoString str)
 {
   Crypto::Decryptor dec(private_key);
   string res = dec.decryptString(str);
+  return res;
+}
+
+CryptoChar RSA::encrypt(char ch)
+{
+  Encryptor enc(public_key);
+  CryptoChar out = enc.encryptChar(ch);
+  return out;
+}
+
+char RSA::decrypt(CryptoChar ch)
+{
+  Crypto::Decryptor dec(private_key);
+  char res = dec.decryptChar(ch);
   return res;
 }

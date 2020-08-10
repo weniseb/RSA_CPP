@@ -17,6 +17,7 @@ using std::string;
 namespace Crypto
 {
   typedef std::vector<int256_t> CryptoString; // To store encrypted chars
+  typedef int256_t CryptoChar; // To store encrypted chars
 
   // struct to hold private key members
   typedef struct
@@ -104,7 +105,7 @@ namespace Crypto
     // str: string to be encrypted
     //
     // return: CryptoString; Structure which contains
-    //         encrypted string
+    //         encrypted message
     //
     CryptoString encrypt(string str);
 
@@ -113,10 +114,29 @@ namespace Crypto
     //
     // str: string to decrypt
     //
-    // return: string; Structure which contains
-    //         encrypted string
+    // return: string; Encrypted message
     //
     string decrypt(CryptoString str);
+
+    //-----------------------------------------------------
+    // Encrypts a string
+    //
+    // ch: character to be encrypted
+    //
+    // return: CryptoChar; Boost's 256bit integer which contains
+    //         encrypted character
+    //
+    CryptoChar encrypt(char ch);
+
+    //-----------------------------------------------------
+    // Decrypts a string
+    //
+    // str: character to decrypt;  Boost's 256bit integer which contains
+    //      encrypted character
+    //
+    // return: char; Encrypted character
+    //
+    char decrypt(CryptoChar str);
 
     //-----------------------------------------------------
     // "<<" operator overload for printing key members to std::out

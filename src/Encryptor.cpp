@@ -25,8 +25,8 @@ CryptoString Encryptor::encryptString(string &input)
   return str;
 }
 
-int256_t Encryptor::encryptChar(int c) const
+CryptoChar Encryptor::encryptChar(char c) const
 {
-  int256_t res = powm((int256_t)c, public_key->r, public_key->m);
+  CryptoChar res = powm((CryptoChar)c, public_key->r, public_key->m);
   return res.convert_to<int>();
 }

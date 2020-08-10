@@ -12,12 +12,27 @@ int main()
   
   try
   {
-    string in = "This is a bretty long message, with extra special caharacters and no deeber meaning!";
+    //-----------
+    // String message
+    //
 
-    Crypto::CryptoString out = rsa.encrypt(in);
-    string res = rsa.decrypt(out);
+    string in_str = "This is a bretty long message, with extra special caharacters and no deeber meaning!";
 
-    std::cout << "input: " << in << " | output: " << res << "\n";
+    Crypto::CryptoString out_str = rsa.encrypt(in_str);
+    string res_str = rsa.decrypt(out_str);
+
+    std::cout << "input: " << in_str << " | output: " << res_str << "\n";
+
+    //-----------
+    // Character message
+    //
+
+    char in_ch = 'X';
+
+    Crypto::CryptoChar out_ch = rsa.encrypt(in_ch);
+    char res_ch = rsa.decrypt(out_ch);
+
+    std::cout << "input: " << in_ch << " | output: " << res_ch << "\n";
 
   }
   catch (std::exception &e)
