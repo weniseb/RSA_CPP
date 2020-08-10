@@ -12,16 +12,10 @@ int main()
   
   try
   {
-    const Crypto::PublicKey* pubKey = rsa.getPublicKey();
-    const Crypto::PrivateKey* privKey = rsa.getPrivateKey();
-
     string in = "This is a bretty long message, with extra special caharacters and no deeber meaning!";
 
-    Crypto::Encryptor enc(pubKey);
-    Crypto::CryptoString out = enc.encryptString(in);
-
-    Crypto::Decryptor dec(privKey);
-    string res = dec.decryptString(out);
+    Crypto::CryptoString out = rsa.encrypt(in);
+    string res = rsa.decrypt(out);
 
     std::cout << "input: " << in << " | output: " << res << "\n";
 

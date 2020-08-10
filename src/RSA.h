@@ -12,7 +12,7 @@
 #include <boost/multiprecision/cpp_int.hpp>
 
 using namespace boost::multiprecision;
-
+using std::string;
 
 namespace Crypto
 {
@@ -97,6 +97,26 @@ namespace Crypto
     //-----------------------------------------------------
     // return: const pointer to private key
     const PrivateKey* getPrivateKey() const;
+
+    //-----------------------------------------------------
+    // Encrypts a string
+    //
+    // str: string to be encrypted
+    //
+    // return: CryptoString; Structure which contains
+    //         encrypted string
+    //
+    CryptoString encrypt(string str);
+
+    //-----------------------------------------------------
+    // Decrypts a string
+    //
+    // str: string to decrypt
+    //
+    // return: string; Structure which contains
+    //         encrypted string
+    //
+    string decrypt(CryptoString str);
 
     //-----------------------------------------------------
     // "<<" operator overload for printing key members to std::out

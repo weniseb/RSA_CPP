@@ -1,7 +1,11 @@
 #include "RSA.h"
 #include "math/Euclidean.h"
+#include "Encryptor.h"
+#include "Decryptor.h"
 #include <exception>
 #include <boost/multiprecision/cpp_int.hpp>
+
+
 using namespace boost::multiprecision;
 using namespace Crypto;
 
@@ -111,4 +115,18 @@ int256_t RSA::makePositive(int256_t numb, int256_t mod) const
   }
 
   return tmp;
+}
+
+CryptoString RSA::encrypt(string str)
+{
+  Encryptor enc(public_key);
+  CryptoString out = enc.encryptString(str);
+  return out;
+}
+
+string RSA::decrypt(CryptoString str)
+{
+  Crypto::Decryptor dec(private_key);
+  string res = dec.decryptString(str);
+  return res;
 }
