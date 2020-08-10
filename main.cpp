@@ -8,10 +8,12 @@ using std::string;
 
 int main()
 {
-  Crypto::RSA rsa(6907, 7687, 491);
-  
+  //Crypto::RSA rsa(6907, 7687, 491);
+
   try
   {
+    Crypto::RSA rsa(6907, 7687, 24);
+
     //-----------
     // String message
     //

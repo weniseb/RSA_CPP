@@ -17,8 +17,8 @@ RSA::RSA(int256_t p, int256_t q, int256_t r) : p(0), q(0), m(0), phi_of_m(0), r(
   }
   catch (std::exception &e)
   {
-    std::cout << e.what();
-    delete this;
+    //std::cout << e.what();
+    throw; // Rethrow exception.
   }
 }
 
@@ -30,13 +30,13 @@ void RSA::setParameters(int256_t p, int256_t q, int256_t r)
   this->m = p * q;
   this->phi_of_m = calcPhi(p, q);
 
-  if (!isPrime(p) || !isPrime(q))
+  if (!isPrime(p) || !isPrime(q)) // p and q must be prime numbers
   {
     throw std::exception("[ERROR] p or q is not a prime number!");
   }
-  else if ((r < m) && (r > 1) && (Euclidean::euclidean(r, phi_of_m) != 1))
+  else if ((r < m) && (r > 1) && (Euclidean::euclidean(r, phi_of_m) != 1)) // r and phi of m must be coprime
   {
-    throw std::exception("[ERROR] r is not equal or less than p * m, or GCD of phi(m) and r is not 1!");
+    throw std::exception("[ERROR] r is not equal or less than p * q (=> m), or r and phi of m are not coprime!");
   }
 }
 
