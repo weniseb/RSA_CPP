@@ -86,9 +86,18 @@ namespace Crypto
     static int256_t calcPhi(int256_t a, int256_t b);
 
   public:
-    //-----------------------------------------------------
-    // Constructors
     RSA() = delete;
+
+    //-----------------------------------------------------
+    // Constructor
+    //
+    // int256_t p: First prime number
+    // int256_t q: Second prime number
+    // int256_t r: First public-key member
+    //
+    // Important: r has to be coprime with phiOf(m)!
+    //            p and q must be prime numbers!
+    //
     RSA(int256_t p, int256_t q, int256_t r);
 
     //-----------------------------------------------------
