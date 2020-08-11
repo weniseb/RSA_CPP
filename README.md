@@ -70,7 +70,7 @@ CryptoChar encrypt(char ch);
 // str: character to decrypt;  Boost's 256bit integer which contains
 //      the decrypted character
 //
-// return: char; Encrypted character
+// return: char; Decrypted character
 //
 char decrypt(CryptoChar str);
 ```
