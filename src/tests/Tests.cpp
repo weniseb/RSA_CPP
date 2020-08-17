@@ -2,10 +2,10 @@
 #include <boost/test/included/unit_test.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
 
-#include "RSA.h"
-#include "Encryptor.h"
-#include "Decryptor.h"
-#include "Euclidean.h"
+#include "../RSA.h"
+#include "../Encryptor.h"
+#include "../Decryptor.h"
+#include "../math/Euclidean.h"
 
 using namespace boost::multiprecision;
 
