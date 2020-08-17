@@ -5,7 +5,7 @@ This project contains the implementation of the popular RSA cryptosystem in **C+
 Currently the cryptosystem supports en-/decryption of a single character or a whole string.  
   
 The **RSA key-length** is currently *256 bit*. The *boost multiprecision* subset is used for that key length implementation.  
-(It is planed to implent a dynamic *key-length* implementation)
+(It is a dynamic *key-length* implementation planned)
 
 ## Project structure
 The complete implementation and all source files are in the subdirectory **src/**.  
