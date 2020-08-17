@@ -8,37 +8,42 @@ using std::string;
 
 int main()
 {
-  //Crypto::RSA rsa(6907, 7687, 491);
-
   try
   {
-    Crypto::RSA rsa(6907, 7687, 24);
+    Crypto::RSA rsa(11, 17, 3);
 
-    //-----------
-    // String message
-    //
+    // String message to encrypt
+    string in_str;
+    std::cout << "[INF] Please enter a string message...\n";
+    std::getline(std::cin, in_str);
 
-    string in_str = "This is a bretty long message, with extra special caharacters and no deeber meaning!";
+    Crypto::CryptoString out_str = rsa.encrypt(in_str);  // Encrypt message
+    string res_str = rsa.decrypt(out_str);               // Decrypt message
 
-    Crypto::CryptoString out_str = rsa.encrypt(in_str);
-    string res_str = rsa.decrypt(out_str);
+    std::cout << "[INF] Result of RSA:\n";
+    std::cout << "Input Message:     " << in_str  << "\n"
+            //<< "Encrypted message: " << out_str << "\n"
+              << "Decrypted message: " << res_str << "\n";
 
-    std::cout << "input: " << in_str << " | output: " << res_str << "\n";
+    // ------------------------------------------------------------------------
 
-    //-----------
-    // Character message
-    //
-
-    char in_ch = 'X';
+    // Character message to encrypt
+    char in_ch;
+    std::cout << "[INF] Please enter one character...\n";
+    std::cin >> in_ch;
 
     Crypto::CryptoChar out_ch = rsa.encrypt(in_ch);
     char res_ch = rsa.decrypt(out_ch);
 
-    std::cout << "input: " << in_ch << " | output: " << res_ch << "\n";
+    std::cout << "[INF] Result of RSA:\n";
+    std::cout << "Input Message:     " << in_ch << "\n"
+      //<< "Encrypted message: " << out_str << "\n"
+      << "Decrypted message: " << res_ch << "\n";
 
   }
   catch (std::exception &e)
   {
+    std::cout << "[ERR] RSA-exception thrown!\n";
     std::cout << e.what();
   }
 
