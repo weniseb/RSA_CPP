@@ -40,6 +40,10 @@ int main()
       //<< "Encrypted message: " << out_str << "\n"
       << "Decrypted message: " << res_ch << "\n";
 
+    // -------------------------
+    std::string tmp;
+    std::getline(std::cin, tmp);
+
   }
   catch (std::exception &e)
   {
