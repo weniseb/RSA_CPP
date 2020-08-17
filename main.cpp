@@ -27,7 +27,7 @@ int main()
 
     // ------------------------------------------------------------------------
 
-    // Character message to encrypt
+    // Character to encrypt
     char in_ch;
     std::cout << "[INF] Please enter one character...\n";
     std::cin >> in_ch;
